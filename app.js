@@ -30,7 +30,7 @@ function runPrompt() {
     }).then(function(answer){
         switch (answer.action){
             case  "View Departments":
-                viewDepartment();
+                viewDepartments();
                 break;
             case "View Roles":
                 viewRoles();
@@ -47,4 +47,37 @@ function runPrompt() {
         };
     });
 
+};
+
+
+function viewDepartments(){
+    var sqlStr = "SELECT * FROM departments";
+    connection.query(sqlStr, function(err, result){
+        if (err) throw err;
+        console.table(result)
+        runPrompt();
+    })
+
+};
+
+function viewRoles(){
+    var sqlStr = "SELECT * FROM roles";
+    connection.query(sqlStr, function(err, result){
+        if (err) throw err;
+        console.table(result)
+        runPrompt();
+    })
+
+};
+
+function viewEmployees(){
+    var sqlStr = "SELECT first_name, last_name, title, salary FROM employees ";
+    sqlStr += "LEFT JOIN roles ";
+    sqlStr += "ON employees.roles_id = roles.id"
+    connection.query(sqlStr, function (err, result) {
+        if (err) throw err;
+
+        console.table(result)
+        runPrompt();
+    });
 };
