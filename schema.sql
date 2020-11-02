@@ -26,6 +26,9 @@ CREATE TABLE employees(
     primary key(id)
 );
 
+select * from employee;
+select * from role;
+select * from department;
 
 INSERT into department (name)
 VALUES ("Manager");
@@ -37,6 +40,8 @@ INSERT into department (name)
 VALUES ("Engineering");
 INSERT into department (name)
 VALUES ("Finance");
+
+select * from department;
 
 INSERT INTO roles (title, salary, department_id)
 VALUES ("Manager", 65000, 1);
@@ -51,6 +56,7 @@ VALUES ("Accountant", 50000, 5);
 INSERT INTO roles (title, salary, department_id)
 VALUES ("Legal", 50000, 3);
 
+select * from roles;
 
 INSERT INTO employees (first_name, last_name, roles_id)
 VALUES ("Timmy","Stevens", 1);
@@ -67,3 +73,4 @@ VALUES ("Bruce","Wayne", 6);
 INSERT INTO employees (first_name, last_name, roles_id)
 VALUES ("Peter","Parker", 7);
 
+select * from employees;
