@@ -3,32 +3,32 @@ CREATE DATABASE employees_db;
 USE employees_db;
 
 CREATE TABLE department(
-    id integer auto_increment not null,
-    name varchar(30) not null,
-    primary key(id)
+    id integer auto_increment not null primary key,
+    name varchar(30) not null
 );
 
 
 CREATE TABLE roles(
-    id integer auto_increment not null,
+    id integer auto_increment not null primary key,
     title varchar(30) not null,
     salary decimal not null,
     department_id integer not null,
-    primary key(id)
+    foreign key (department_id) references department(id)
+
 );
 
 CREATE TABLE employees(
-    id integer auto_increment not null,
+    id integer auto_increment not null primary key,
     first_name varchar(30) not null,
     last_name varchar(30) not null,
     roles_id integer not null,
     manager_id integer,
-    primary key(id)
+    foreign key (roles_id) references roles(id),
+    foreign key (manager_id) references employees(id)
+ 
 );
 
-select * from employee;
-select * from role;
-select * from department;
+
 
 INSERT into department (name)
 VALUES ("Manager");
@@ -41,7 +41,6 @@ VALUES ("Engineering");
 INSERT into department (name)
 VALUES ("Finance");
 
-select * from department;
 
 INSERT INTO roles (title, salary, department_id)
 VALUES ("Manager", 65000, 1);
@@ -55,8 +54,10 @@ INSERT INTO roles (title, salary, department_id)
 VALUES ("Accountant", 50000, 5);
 INSERT INTO roles (title, salary, department_id)
 VALUES ("Legal", 50000, 3);
+INSERT INTO roles (title, salary, department_id)
+VALUES ("SofwarEngineer", 40000, 4);
 
-select * from roles;
+
 
 INSERT INTO employees (first_name, last_name, roles_id)
 VALUES ("Timmy","Stevens", 1);
@@ -74,3 +75,5 @@ INSERT INTO employees (first_name, last_name, roles_id)
 VALUES ("Peter","Parker", 7);
 
 select * from employees;
+select * from roles;
+select * from department;
