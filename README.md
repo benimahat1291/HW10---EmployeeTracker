@@ -1,38 +1,54 @@
 # Express: Employee tracker
 
+## Table of Contents
+
+* [Description](#description)
+* [Links](#links)
+* [Screenshots](#screenshots)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Technologies Used](#technologies)
+* [Questions](#questions)
+
 ## Description
-Create an application that which will allow you to show all the employees, their department roles and other informatiuon. Also alow the user to be able to change the information about the employee from the database. 
 
-## Direction
-* bulid schema
-* set up sql connection
-* run inquirer to prompt
-* depending on chocie direct to function
+A node application that which will allow you to show all the employees, their department roles and other informatiuon. Also alow the user to be able to change the information about the employee from the database using the comand terminal. 
 
-## technologies used
-* Node.js
-* mysql
-* inquirer
 
-## Directory Files
-* node_modules (npm install from package manager)
-* .gitignore
-* package-lock.json (npm install from package manager)
-* package.json
-* app.js
-* README.md
-* schema.sql
+## Links
 
-## deployment directions
+[View a Video Demonstration](https://drive.google.com/file/d/1EU3wkwNWJLQo2z9xjMsXZQw6n32240og/view)
+
+
+## Screenshots
+
+
+![ Search:](images/sc1.png)
+![ Login/Signup:](/images/sc2.png)
+![View all:](images/sc3.png)
+![View all:](images/sc4.png)
+![View all:](images/sc5.png)
+![View all:](images/sc6.png)
+![View all:](images/sc7.png)
+
+
+
+## Installation Instructions
+
 * run "npm run install" in bash terminal to get package-lock.json and node_modules
 * run "node app.js"
 
-## Chalanges
-* Learn how to build our own schema from scratch
-* Learning how to join schemas together using Ids
-* update using wildcard values from inquirer
-* understanding how to work with information from a database
+## Usage
 
-## Developer
+in the command line, run "node app.js". you will be prompted on what you would like to do with the employee directory. use the up and down arrow keys to toggle the chocies and enter the select the desired choice. 
+ 
 
-Beni Mahat 10/25/2020
+## Technologies Used
+
+node, express, inquirer, mysql
+
+## Questions
+
+If you have further projects and questions, you can find me on Github: [GITHUB](https://github.com/benimahat1291). 
+please visit my portfolio to find contact information: [BENI MAHAT](https://benimahat1291.github.io/Portfolio_v2/#/). 
+
